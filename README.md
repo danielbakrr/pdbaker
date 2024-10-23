@@ -10,17 +10,19 @@ To do:
    - 2.1 Biography
    - 2.2 Skills
    - 2.3 Professional Photo (optional)
+   - Timeline??
 
 3. **Portfolio/Work**
    - 3.1 Project Showcases
    - 3.2 Case Studies
    - 3.3 Events
-
+   - 3.4 CCA experience
 
 4. **Resume/CV**
    - 4.1 Experience
    - 4.2 Education
    - 4.3 Downloadable CV
+   - 4.4 Resume!
 
 5. **Contact**
    - 5.1 Contact Form✅
@@ -30,6 +32,7 @@ To do:
 
 8. **Additional Features**
    - 8.1 Interactive Elements✅
+   - 8.2 Responsiveness 
    
 
 
