@@ -1,0 +1,82 @@
+.projects-list {
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  margin-top: 4em;
+}
+
+.projects-list h2 {
+  font-size: 2.5em;
+}
+
+.scroll-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  position: relative; /* Enable absolute positioning for buttons */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.scroll-button {
+  background-color: #435e84;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute; /* Position buttons absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  z-index: 10;
+}
+
+.scroll-button.left {
+  left: 20px; /* Adjust as needed */
+}
+
+.scroll-button.right {
+  right: 20px;
+}
+
+.project-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.project-container::-webkit-scrollbar {
+  display: none; /* Hide scroll bar */
+}
+
+.project-item {
+  background: #435e84;
+  margin: 0 15px;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+  background: #ddd;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  font-size: 18px;
+  font-weight: bold;
+}
