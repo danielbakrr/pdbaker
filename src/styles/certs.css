@@ -1,0 +1,50 @@
+.certs-list {
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    font-weight: bold;
+  }
+
+  .certs-list h2 {
+    font-size: 2.5em;
+  }
+  
+  .scroll-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 10px 0;
+  }
+  
+  .cert-item {
+    background: #435e84;
+    margin: 0 15px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cert-item:hover {
+    background: #ddd;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .cert-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
