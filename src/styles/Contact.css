@@ -1,0 +1,48 @@
+.contact-form {
+  padding: 20px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between; /* Evenly space the icons */
+  align-items: center; /* Vertically center icons if needed */
+  width: 100%; /* Full width of the container */
+}
+
+.contact-form a {
+  flex: 1; 
+  text-align: center; 
+}
+
+.linkedin-icon{
+  width:6.4em;
+  height: auto;
+  margin-bottom: -0.3em;
+  margin-right: 0.5em;
+}
+
+.instagram-icon{
+  width: 8.5em;
+  height: auto;
+  margin-bottom: -0.5em;
+  margin-right: 1em;
+}
+
+.whatsapp-icon{
+  width: 6.5em;
+  height: auto;
+  margin-bottom: -0.3em;
+  margin-right: 1.3em;
+}
+
+.email-icon{
+  width: 8em;
+  height: auto;
+  margin-right: 1em;
+}
