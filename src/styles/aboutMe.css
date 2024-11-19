@@ -22,7 +22,6 @@
 }
 
 .text-container h2 {
-  font-size: 2.5em; /* Larger font size */
   margin-bottom: -3vh;
   margin-top: -0.5vh;
   color: black; /* Darker text color */
@@ -47,7 +46,7 @@
 .image-container img {
   max-width: 100%; 
   height: auto; 
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .text-left {
@@ -61,4 +60,9 @@
 .typing-text {
   overflow: hidden;
   display: inline-block; 
+}
+
+h3{
+  font-size: 2.5em;
+  text-align: center;
 }

@@ -1,86 +1,94 @@
 import '../styles/aboutMe.css';
-import meImg from '../assets/me.JPG';
-import meImg2 from '../assets/me2.JPG';
+import meImg from '../assets/professional_photo_2.jpg';
+import meImg2 from '../assets/professional_photo.jpg';
+import guitar from '../assets/guitar.jpg';
 import { useState, useEffect, useMemo, useRef } from 'react';
 
 const AboutMe = () => {
-
   const sections = useMemo(() => [
     {
-      title: "About Me",
-      content: "Hello, I'm Daniel! I'm currently a year 2 Information Technology Student at Ngee Ann Polytechnic. I'm an aspiring analyst who enjoys all things technology. I'm keen on learning new things and venturing into areas outside of my comfort zone.",
-      imgSrc: meImg2
+      content: "Hello, I'm Daniel! I'm a year 2 Information Technology Student at Ngee Ann Polytechnic. I'm an aspiring data analyst and a Cloud enthusiast who enjoys all things technology!",
+      imgSrc: meImg2,
     },
     {
-      title: "Future Endeavours",
-      content: "As I approach the end of my Polytechnic journey, I am excited to embark on the next chapter of my professional development. Starting in February 2025, I am actively seeking FULL-TIME internship opportunities that will enable me to further hone my skills and apply the knowledge I have acquired throughout my studies.",
-      imgSrc: meImg
-    }
+      content: "As a strong advocator for continuous self-improvement, I'm keen on learning new things and venturing outside of my comfort zone. This application uses React.js - a framework I've taught myself!",
+      imgSrc: meImg,
+    },
+    {
+      content: `Outside of my bustling academic life, I am an avid guitar geek and I enjoy the thrill of performing music live in front of an audience. Follow my band on <a href="https://www.instagram.com/sleep.analysis/" target="_blank" rel="noopener noreferrer">Instagram</a>!`,
+      imgSrc: guitar,
+    },
   ], []);
 
   const [currentText, setCurrentText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(-1);  // Initialize to -1
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const [completedSections, setCompletedSections] = useState(new Set());
   const sectionRefs = useRef([]);
 
   useEffect(() => {
     const refsCopy = sectionRefs.current;
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         const index = refsCopy.indexOf(entry.target);
 
-        if (entry.isIntersecting) {
-          // Section is in view, start or continue the animation
+        if (entry.isIntersecting && !completedSections.has(index)) {
           setCurrentIndex(index);
-        } else if (currentIndex === index) {
-          // Section has left the viewport, reset animation
-          setCurrentText('');
-          setTextIndex(0);
-          setCurrentIndex(-1);  // Reset to prevent animation from continuing
         }
       });
-    }, { threshold: 1.0 }); // Full visibility of section
+    }, { threshold: 1.0 });
 
-    refsCopy.forEach(section => observer.observe(section));
+    refsCopy.forEach((section) => observer.observe(section));
 
     return () => {
-      refsCopy.forEach(section => observer.unobserve(section));
+      refsCopy.forEach((section) => observer.unobserve(section));
     };
-  }, [currentIndex]);
+  }, [completedSections]);
 
   useEffect(() => {
     if (currentIndex >= 0 && textIndex < sections[currentIndex].content.length) {
       const textTimeoutId = setTimeout(() => {
-        setCurrentText(prev => prev + sections[currentIndex].content.charAt(textIndex));
-        setTextIndex(prev => prev + 1);
-      }, 10);
+        setCurrentText((prev) => prev + sections[currentIndex].content.charAt(textIndex));
+        setTextIndex((prev) => prev + 1);
+      }, 10); // Adjust speed here
       return () => clearTimeout(textTimeoutId);
+    } else if (currentIndex >= 0 && textIndex === sections[currentIndex].content.length) {
+      setCompletedSections((prev) => new Set(prev).add(currentIndex));
     }
   }, [textIndex, sections, currentIndex]);
 
   useEffect(() => {
-    if (currentIndex >= 0) {
+    if (currentIndex >= 0 && !completedSections.has(currentIndex)) {
       setCurrentText('');
       setTextIndex(0);
     }
-  }, [currentIndex]);
+  }, [currentIndex, completedSections]);
 
   return (
     <div className="about-me-container">
+      <h3>About Me</h3>
       {sections.map((section, index) => (
         <div
           className={`section-container ${index % 2 === 0 ? 'text-left' : 'text-right'}`}
           key={index}
-          ref={(el) => sectionRefs.current[index] = el}
+          ref={(el) => (sectionRefs.current[index] = el)}
         >
           <div className="image-container">
-            <img src={section.imgSrc} alt={section.title} />
+            <img src={section.imgSrc} alt="Section" />
           </div>
           <div className="text-container">
             <div className="about-me-section-content">
-              <h2>{section.title}</h2>
-              <p className="typing-text">{currentIndex === index ? currentText : ''}</p>
+              <p
+                className="typing-text"
+                dangerouslySetInnerHTML={{
+                  __html: completedSections.has(index)
+                    ? section.content
+                    : currentIndex === index
+                    ? currentText
+                    : '',
+                }}
+              />
             </div>
           </div>
         </div>
