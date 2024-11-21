@@ -7,13 +7,13 @@ To do:
    - 1.4 Logo
 
 2. **About Me**
-   - 2.1 Biography
-   - 2.2 Skills
-   - 2.3 Professional Photo (optional)
+   - 2.1 Biography✅
+   - 2.2 Skills✅
+   - 2.3 Professional Photo (optional)✅
    - Timeline??
 
 3. **Portfolio/Work**
-   - 3.1 Project Showcases
+   - 3.1 Project Showcases✅
    - 3.2 Case Studies
    - 3.3 Events
    - 3.4 CCA experience
