@@ -6,13 +6,14 @@
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 20px;
+  color: white;
 }
 
 .icon-container {
   display: flex;
-  justify-content: space-between; /* Evenly space the icons */
-  align-items: center; /* Vertically center icons if needed */
-  width: 100%; /* Full width of the container */
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%; 
 }
 
 .contact-form a {
