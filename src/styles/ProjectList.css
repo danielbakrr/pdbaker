@@ -7,31 +7,37 @@
 
 .projects-list h2 {
   font-size: 2.5em;
+  color:white;
 }
 
 .scroll-container {
   display: flex;
-  align-items: center; /* Center items vertically */
-  position: relative; /* Enable absolute positioning for buttons */
-  overflow: hidden; /* Hide overflowing content */
+  align-items: center; 
+  position: relative; 
+  overflow: hidden;
 }
 
 .scroll-button {
-  background-color: #435e84;
+  background-color: black;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 100%;
   padding: 10px 15px;
   cursor: pointer;
   font-size: 18px;
-  position: absolute; /* Position buttons absolutely */
+  position: absolute;
   top: 50%; /* Center vertically */
   transform: translateY(-50%); /* Adjust for vertical centering */
   z-index: 10;
 }
 
+.scroll-button:hover {
+  background-color: white;
+  color: black;
+}
+
 .scroll-button.left {
-  left: 20px; /* Adjust as needed */
+  left: 20px;
 }
 
 .scroll-button.right {
@@ -45,13 +51,13 @@
   padding: 10px 0;
 }
 
-/* For Webkit browsers (Chrome, Safari) */
+
 .project-container::-webkit-scrollbar {
-  display: none; /* Hide scroll bar */
+  display: none; 
 }
 
 .project-item {
-  background: #435e84;
+  background: rgba(0, 0, 0, 0.5);
   margin: 0 15px;
   padding: 15px;
   border-radius: 10px;
@@ -61,22 +67,24 @@
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px); /* Blur the section container */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
 }
 
 .project-item:hover {
-  background: #ddd;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.08); /* Slight zoom effect on hover */
+}
+
+.project-name {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
 }
 
 .project-image {
   width: 200px;
   height: 150px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.project-name {
-  font-size: 18px;
-  font-weight: bold;
+  border-radius: 10px;
 }
