@@ -11,7 +11,7 @@ const AboutMe = () => {
       imgSrc: meImg2,
     },
     {
-      content: "As a strong advocator for continuous self-improvement, I'm keen on learning new things and venturing outside of my comfort zone. This application uses React.js - a framework I've taught myself!",
+      content: "As a strong advocate for continuous self-improvement, I'm keen on learning new things and venturing outside of my comfort zone. This application uses React.js - a framework I've taught myself!",
       imgSrc: meImg,
     },
     {
@@ -67,7 +67,6 @@ const AboutMe = () => {
 
   return (
     <div className="about-me-container">
-      <h3>About Me</h3>
       {sections.map((section, index) => (
         <div
           className={`section-container ${index % 2 === 0 ? 'text-left' : 'text-right'}`}
