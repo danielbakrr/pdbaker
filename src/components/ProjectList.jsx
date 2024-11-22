@@ -15,7 +15,7 @@ const ProjectList = () => {
   const startScroll = useCallback(() => {
     scrollInterval.current = setInterval(() => {
       if (containerRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+        const { scrollLeft, scrollWidth } = containerRef.current;
 
         containerRef.current.scrollLeft += scrollAmount;
 
