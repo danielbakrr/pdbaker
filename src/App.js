@@ -1,5 +1,4 @@
 import React from 'react';
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from './components/header';
 import AboutMe from './components/aboutMe';
 import ProjectList from './components/ProjectList';
@@ -13,7 +12,6 @@ const App = () => {
     <div>
       <Header />
       <main>
-        <SpeedInsights>
           <section id="about">
             <AboutMe />
           </section>
@@ -26,7 +24,6 @@ const App = () => {
           <section id="contact">
             <ContactForm />
           </section>
-        </SpeedInsights>
       </main>
       <Footer />
     </div>
