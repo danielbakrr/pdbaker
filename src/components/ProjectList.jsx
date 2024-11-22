@@ -56,7 +56,7 @@ const ProjectList = () => {
 
   return (
     <section id="projects" className="projects-list">
-      <h2>Projects & Events</h2>
+      <h2>Projects</h2>
       <div className="scroll-container">
         <div id="projectContainer" className="project-container" ref={containerRef}>
           {/* Duplicate the content for infinite scroll */}
