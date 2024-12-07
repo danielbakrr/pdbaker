@@ -14,7 +14,7 @@ body {
 .section-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 3em;
   gap: 30px;
   backdrop-filter: blur(10px); 
   background: rgba(0, 0, 0, 0.5); 

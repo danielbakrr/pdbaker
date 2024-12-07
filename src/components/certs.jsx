@@ -7,6 +7,7 @@ import js from '../assets/js.png';
 import node from '../assets/node.png';
 import express from '../assets/express.png';
 import react from '../assets/react.png';
+import github from '../assets/github.png'
 
 const CertsList = () => {
   const containerRef = useRef(null);
@@ -79,6 +80,9 @@ const CertsList = () => {
           <div className="cert-item">
             <img src={react} alt="Cert 7" className="cert-image" />
           </div>
+          <div className="cert-item">
+            <img src={github} alt="Cert 8" className="cert-image" />
+          </div>
         </div>
         {/* Duplicate the content for infinite scroll */}
         <div className="scroll-content">
@@ -102,6 +106,9 @@ const CertsList = () => {
             </div>
             <div className="cert-item">
               <img src={react} alt="Cert 7" className="cert-image" />
+            </div>
+            <div className="cert-item">
+              <img src={github} alt="Cert 8" className="cert-image" />
             </div>
         </div>
       </div>
