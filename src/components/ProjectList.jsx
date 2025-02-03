@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import '../styles/ProjectList.css';
 import personalWeb from '../assets/personalWeb.png';
-import gihubbies from '../assets/githubbies.png';
+import gihubbies from '../assets/githubbies-logo2.png';
 import tycoon from '../assets/python.png';
 import inflationAtlas from '../assets/inflation_atlas.png';
 import error from '../assets/error404.jpg';
 
 const ProjectList = () => {
   const containerRef = useRef(null);
-  const scrollAmount = 1; // Pixels to scroll per interval
-  const delay = 30; // Interval delay in milliseconds
+  const scrollAmount = 1; 
+  const delay = 30;
   const scrollInterval = useRef(null);
 
   const startScroll = useCallback(() => {
@@ -19,7 +19,7 @@ const ProjectList = () => {
 
         containerRef.current.scrollLeft += scrollAmount;
 
-        // Reset scroll position when reaching the end of the duplicated content
+        //reset scroll position when reaching the end of the duplicated content
         if (scrollLeft >= scrollWidth / 2) {
           containerRef.current.scrollLeft = 0;
         }
