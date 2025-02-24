@@ -23,7 +23,7 @@ const Header = () => {
           <img src={logo} alt="Logo" className="logo" />
           <ul>
             <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About Me</a></li>
-            <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects & Events</a></li>
+            <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
             <li><a href="#certs" onClick={(e) => scrollToSection(e, 'certs')}>Proficiencies</a></li>
             <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contacts</a></li>
           </ul>

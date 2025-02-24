@@ -5,6 +5,7 @@ import gihubbies from '../assets/githubbies-logo2.png';
 import tycoon from '../assets/python.png';
 import inflationAtlas from '../assets/inflation_atlas.png';
 import error from '../assets/error404.jpg';
+import fallSafe from '../assets/fallSafe.png'
 
 const ProjectList = () => {
   const containerRef = useRef(null);
@@ -81,6 +82,10 @@ const ProjectList = () => {
               <img src={error} alt="Project 5" className="project-image" />
               <div className="project-name">SEAwareness</div>
             </div>
+            <div className="project-item" onClick={() => openLink('https://github.com/danielbakrr/FallSafe?tab=readme-ov-file')}>
+              <img src={fallSafe} alt="Project 6" className="project-image" />
+              <div className="project-name">FallSafe</div>
+            </div>
           </div>
           <div className="scroll-content">
             <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/pdbaker')}>
@@ -102,6 +107,10 @@ const ProjectList = () => {
             <div className="project-item" onClick={() => openLink()}>
               <img src={error} alt="Project 5" className="project-image" />
               <div className="project-name">SEAwareness</div>
+            </div>
+            <div className="project-item" onClick={() => openLink('https://github.com/danielbakrr/FallSafe?tab=readme-ov-file')}>
+              <img src={fallSafe} alt="Project 6" className="project-image" />
+              <div className="project-name">FallSafe</div>
             </div>
           </div>
         </div>
