@@ -1,78 +1,178 @@
-body {
-  background: url('../assets/background.JPG') no-repeat center center fixed;
-  background-size: cover;
+/* aboutMe.css */
+.about-section {
+  padding: 6rem 0;
+  position: relative;
 }
 
-.about-me-container {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin: 5% auto 0;
-  padding: 20px;
-}
-
-.section-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 3em;
-  gap: 30px;
-  backdrop-filter: blur(10px); 
-  background: rgba(0, 0, 0, 0.5); 
-  border-radius: 10px;
-  padding: 50px;
-}
-
-.text-container {
-  flex: 3;
+.section-title {
   color: white;
-  line-height: 1.5;
-  word-wrap: break-word;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.text-container h2 {
-  margin-bottom: -3vh;
-  margin-top: -0.5vh;
-  color: white;
+.section-title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.text-container p {
-  font-size: 1.2em;
-  color: white;
-  line-height: 1.5;
-  word-wrap: break-word;
+.about-row {
+  margin-bottom: 6rem !important;
 }
 
-.image-container {
-  flex: 1.5;
+.about-row:last-child {
+  margin-bottom: 0 !important;
+}
+
+.about-card {
+  border-radius: 20px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-img-overlay-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image {
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-card:hover .about-image {
+  transform: scale(1.05);
+}
+
+.card-img-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.about-card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  padding: 20px;
+  width: 100%;
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: white;
+  background: #3498db;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+.about-content {
+  padding: 20px 30px;
 }
 
-.text-left {
-  flex-direction: row;
-}
-
-.text-right {
-  flex-direction: row-reverse;
-}
-
-.typing-text {
-  overflow: hidden;
-  display: inline-block;
-}
-
-h3 {
-  font-size: 2.5em;
-  text-align: center;
+.about-title {
   color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #3498db;
+  bottom: 0;
+  left: 0;
+}
+
+.about-text {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.about-link {
+  color: #3498db;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  border-bottom: 1px dashed #3498db;
+  padding-bottom: 2px;
+}
+
+.about-link:hover {
+  color: #2ecc71;
+  border-bottom-color: #2ecc71;
+}
+
+@media (max-width: 991px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+  
+  .about-row {
+    margin-bottom: 4rem !important;
+  }
+  
+  .about-content {
+    padding: 15px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .about-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .about-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .about-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .about-image {
+    height: 300px;
+  }
 }
