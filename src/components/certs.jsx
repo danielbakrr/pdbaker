@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 import aws from '../assets/aws.png';
 import html from '../assets/html.png';
 import css from '../assets/css.png';
@@ -8,42 +9,123 @@ import node from '../assets/node.png';
 import express from '../assets/express.png';
 import react from '../assets/react.png';
 import github from '../assets/github.png';
+import '../styles/certs.css';
 
 const CertsList = () => {
   const skills = [
-    { name: "AWS", image: aws },
-    { name: "HTML", image: html },
-    { name: "CSS", image: css },
-    { name: "JavaScript", image: js },
-    { name: "Node.js", image: node },
-    { name: "Express", image: express },
-    { name: "React", image: react },
-    { name: "GitHub", image: github }
+    { 
+      name: "AWS", 
+      image: aws,
+      description: "Cloud infrastructure & services",
+      level: 85
+    },
+    { 
+      name: "HTML", 
+      image: html,
+      description: "Semantic markup & accessibility",
+      level: 80
+    },
+    { 
+      name: "CSS", 
+      image: css,
+      description: "Styling & responsive design",
+      level: 85
+    },
+    { 
+      name: "JavaScript", 
+      image: js,
+      description: "ES6+, DOM manipulation, async",
+      level: 70
+    },
+    { 
+      name: "Node.js", 
+      image: node,
+      description: "Server-side JavaScript runtime",
+      level: 75
+    },
+    { 
+      name: "Express", 
+      image: express,
+      description: "Web application framework",
+      level: 70
+    },
+    { 
+      name: "React", 
+      image: react,
+      description: "Frontend component library",
+      level: 80
+    },
+    { 
+      name: "GitHub", 
+      image: github,
+      description: "Version control & collaboration",
+      level: 85
+    }
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <section id="certs" className="py-5">
+    <section id="certs" className="skills-section py-5">
       <Container>
-        <h2 className="text-center mb-5">Proficiencies</h2>
-        <Row className="justify-content-center">
-          {skills.map((skill, index) => (
-            <Col key={index} xs={6} sm={4} md={3} lg={3} className="mb-4">
-              <Card className="border-0 shadow-sm h-100 text-center">
-                <Card.Body className="d-flex align-items-center justify-content-center">
-                  <img 
-                    src={skill.image} 
-                    alt={skill.name} 
-                    className="img-fluid" 
-                    style={{ maxHeight: '80px', maxWidth: '80px' }}
-                  />
-                </Card.Body>
-                <Card.Footer className="bg-white border-0">
-                  <small className="text-muted">{skill.name}</small>
-                </Card.Footer>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+        <h2 className="section-title text-center mb-5">Technical Proficiencies</h2>
+        
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.1 }}
+        >
+          <Row className="justify-content-center">
+            {skills.map((skill, index) => (
+              <Col key={index} lg={3} md={4} sm={6} className="mb-4">
+                <motion.div 
+                  className="skill-card"
+                  variants={item}
+                  whileHover={{ 
+                    y: -10,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <div className="skill-icon-container">
+                    <img 
+                      src={skill.image} 
+                      alt={skill.name} 
+                      className="skill-icon" 
+                    />
+                  </div>
+                  <h4 className="skill-name">{skill.name}</h4>
+                  <p className="skill-description">{skill.description}</p>
+                  <div className="skill-level-container">
+                    <div 
+                      className="skill-level" 
+                      style={{ width: `${skill.level}%` }}
+                    />
+                  </div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </motion.div>
       </Container>
     </section>
   );

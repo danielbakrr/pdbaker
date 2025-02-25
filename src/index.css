@@ -1,70 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
 
-body {
+.app-container {
   font-family:"Handjet", Arial, Helvetica, sans-serif;
   font-size: 30px;
   line-height: 1.6;
-}
-
-header {
-  color: #fff;
-  text-align: center;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding: 20px;
-}
-
-.project-list {
-  margin: 20px 0;
-}
-
-.project-item {
-  margin-bottom: 20px;
-}
-
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position:relative;
-  width: 100%;
-  bottom: 0;
-}
-
-a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    text-align: center;
-    padding: 0;
-  }
-
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .project-list ul li {
-    margin: 10px auto;
-    width: 90%;
-  }
+  background-color: black;
 }
