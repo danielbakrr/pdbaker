@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import '../styles/Contact.css'
 
 const Contact = () => {
   return (
     <section id="contact" className="py-5">
       <Container>
-        <h2 className="text-center mb-5">Let's get in touch!</h2>
+      <h2 className="section-title text-center mb-5">Interested in working together?</h2>
         <Row className="justify-content-center">
           <Col xs={12} md={8} lg={6}>
             <div className="d-flex justify-content-around">
@@ -14,7 +15,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="text-decoration-none">
                 <img 
-                  src="https://cdn-icons-png.flaticon.com/256/61/61109.png" 
+                  src="https://img.icons8.com/?size=100&id=98960&format=png&color=FFFFFF" 
                   alt='LinkedIn' 
                   className="img-fluid"
                   style={{ maxWidth: '50px' }}
@@ -26,7 +27,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="text-decoration-none">
                 <img 
-                  src="https://static.vecteezy.com/system/resources/previews/023/986/885/non_2x/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.png" 
+                  src="https://img.icons8.com/m_outlined/512/FFFFFF/instagram-new.png" 
                   alt='Instagram'
                   className="img-fluid"
                   style={{ maxWidth: '50px' }}
@@ -38,10 +39,10 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="text-decoration-none">
                 <img 
-                  src="https://i.pinimg.com/originals/6e/2c/f9/6e2cf920c73d260231a7cb8a16933486.png" 
+                  src="https://img.icons8.com/m_outlined/512/FFFFFF/whatsapp.png" 
                   alt='Whatsapp'
                   className="img-fluid"
-                  style={{ maxWidth: '50px' }}
+                  style={{ maxWidth: '45px' }}
                 />
               </a>
               
@@ -50,7 +51,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="text-decoration-none">
                 <img 
-                  src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_Black_512px.png" 
+                  src="https://img.icons8.com/?size=100&id=Y2GfpkgYNp42&format=png&color=FFFFFF" 
                   alt='Email'
                   className="img-fluid"
                   style={{ maxWidth: '50px' }}
