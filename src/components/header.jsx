@@ -17,13 +17,9 @@ const Header = () => {
 
   return (
     <header>
-      <Container fluid className="py-3 text-center">
-        <h1 className="display-4 fw-bold" data-text="Hey, I'm Daniel!">Hey, I'm Daniel!</h1>
-      </Container>
-      
       <Navbar bg="light" expand="lg" sticky="top" className="shadow-sm">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="">
             <img 
               src={logo} 
               alt="Logo" 
@@ -42,6 +38,9 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Container fluid className="py-3 text-center">
+        <h1 className="display-4 fw-bold" data-text="Hey, I'm Daniel!">Hey, I'm Daniel!</h1>
+      </Container>
     </header>
   );
 };
