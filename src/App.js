@@ -5,10 +5,7 @@ import ProjectList from './components/ProjectList';
 import ContactForm from './components/Contact';
 import Footer from './components/footer';
 import CertsList from './components/certs';
-
-// Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-// Keep your custom styles
 import './index.css';
 
 const App = () => {
@@ -21,7 +18,7 @@ const App = () => {
             <AboutMe />
           </div>
         </section>
-        <section id="projects" className="py-5 bg-light">
+        <section id="projects" className="py-5">
           <div className="container">
             <ProjectList />
           </div>
@@ -31,7 +28,7 @@ const App = () => {
             <CertsList />
           </div>
         </section>
-        <section id="contact" className="py-5 bg-light">
+        <section id="contact" className="py-5">
           <div className="container">
             <ContactForm />
           </div>
