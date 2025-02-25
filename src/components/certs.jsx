@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useCallback } from 'react';
-import '../styles/certs.css';
+import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import aws from '../assets/aws.png';
 import html from '../assets/html.png';
 import css from '../assets/css.png';
@@ -7,111 +7,44 @@ import js from '../assets/js.png';
 import node from '../assets/node.png';
 import express from '../assets/express.png';
 import react from '../assets/react.png';
-import github from '../assets/github.png'
+import github from '../assets/github.png';
 
 const CertsList = () => {
-  const containerRef = useRef(null);
-  const scrollAmount = 1; // Pixels to scroll per interval
-  const delay = 30; // Interval delay in milliseconds
-  const scrollInterval = useRef(null);
-
-  const startScroll = useCallback(() => {
-    scrollInterval.current = setInterval(() => {
-      if (containerRef.current) {
-        const { scrollLeft, scrollWidth } = containerRef.current;
-
-        containerRef.current.scrollLeft += scrollAmount;
-
-        // Reset scroll position when reaching the duplicated content
-        if (scrollLeft >= scrollWidth / 2) {
-          containerRef.current.scrollLeft = 0;
-        }
-      }
-    }, delay);
-  }, [scrollAmount, delay]);
-
-  const stopScroll = useCallback(() => {
-    if (scrollInterval.current) {
-      clearInterval(scrollInterval.current);
-    }
-  }, []);
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (container) {
-      startScroll();
-      container.addEventListener('mouseenter', stopScroll);
-      container.addEventListener('mouseleave', startScroll);
-
-      // Cleanup on unmount
-      return () => {
-        stopScroll();
-        container.removeEventListener('mouseenter', stopScroll);
-        container.removeEventListener('mouseleave', startScroll);
-      };
-    }
-  }, [startScroll, stopScroll]);
+  const skills = [
+    { name: "AWS", image: aws },
+    { name: "HTML", image: html },
+    { name: "CSS", image: css },
+    { name: "JavaScript", image: js },
+    { name: "Node.js", image: node },
+    { name: "Express", image: express },
+    { name: "React", image: react },
+    { name: "GitHub", image: github }
+  ];
 
   return (
-    <section id="certs" className="certs-list">
-      <h2>Proficiencies</h2>
-      <div id="certContainer" className="scroll-container" ref={containerRef}>
-        {/* Duplicate items to create the infinite scroll effect */}
-        <div className="scroll-content">
-          <div className="cert-item">
-            <img src={aws} alt="Cert 1" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={html} alt="Cert 2" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={css} alt="Cert 3" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={js} alt="Cert 4" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={node} alt="Cert 5" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={express} alt="Cert 6" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={react} alt="Cert 7" className="cert-image" />
-          </div>
-          <div className="cert-item">
-            <img src={github} alt="Cert 8" className="cert-image" />
-          </div>
-        </div>
-        {/* Duplicate the content for infinite scroll */}
-        <div className="scroll-content">
-          <div className="cert-item">
-              <img src={aws} alt="Cert 1" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={html} alt="Cert 2" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={css} alt="Cert 3" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={js} alt="Cert 4" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={node} alt="Cert 5" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={express} alt="Cert 6" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={react} alt="Cert 7" className="cert-image" />
-            </div>
-            <div className="cert-item">
-              <img src={github} alt="Cert 8" className="cert-image" />
-            </div>
-        </div>
-      </div>
+    <section id="certs" className="py-5">
+      <Container>
+        <h2 className="text-center mb-5">Proficiencies</h2>
+        <Row className="justify-content-center">
+          {skills.map((skill, index) => (
+            <Col key={index} xs={6} sm={4} md={3} lg={3} className="mb-4">
+              <Card className="border-0 shadow-sm h-100 text-center">
+                <Card.Body className="d-flex align-items-center justify-content-center">
+                  <img 
+                    src={skill.image} 
+                    alt={skill.name} 
+                    className="img-fluid" 
+                    style={{ maxHeight: '80px', maxWidth: '80px' }}
+                  />
+                </Card.Body>
+                <Card.Footer className="bg-white border-0">
+                  <small className="text-muted">{skill.name}</small>
+                </Card.Footer>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </section>
   );
 };

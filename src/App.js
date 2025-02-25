@@ -4,26 +4,38 @@ import AboutMe from './components/aboutMe';
 import ProjectList from './components/ProjectList';
 import ContactForm from './components/Contact';
 import Footer from './components/footer';
-import './index.css';
 import CertsList from './components/certs';
+
+// Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Keep your custom styles
+import './index.css';
 
 const App = () => {
   return (
-    <div>
+    <div className="app-container">
       <Header />
       <main>
-          <section id="about">
+        <section id="about" className="py-5">
+          <div className="container">
             <AboutMe />
-          </section>
-          <section id="projects">
+          </div>
+        </section>
+        <section id="projects" className="py-5 bg-light">
+          <div className="container">
             <ProjectList />
-          </section>
-          <section id="cert">
+          </div>
+        </section>
+        <section id="cert" className="py-5">
+          <div className="container">
             <CertsList />
-          </section>
-          <section id="contact">
+          </div>
+        </section>
+        <section id="contact" className="py-5 bg-light">
+          <div className="container">
             <ContactForm />
-          </section>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

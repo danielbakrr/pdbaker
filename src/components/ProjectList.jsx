@@ -1,120 +1,78 @@
-import React, { useEffect, useRef, useCallback } from 'react';
-import '../styles/ProjectList.css';
+import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import personalWeb from '../assets/personalWeb.png';
 import gihubbies from '../assets/githubbies-logo2.png';
 import tycoon from '../assets/python.png';
 import inflationAtlas from '../assets/inflation_atlas.png';
 import error from '../assets/error404.jpg';
-import fallSafe from '../assets/fallSafe.png'
+import fallSafe from '../assets/fallSafe.png';
 
 const ProjectList = () => {
-  const containerRef = useRef(null);
-  const scrollAmount = 1; 
-  const delay = 30;
-  const scrollInterval = useRef(null);
-
-  const startScroll = useCallback(() => {
-    scrollInterval.current = setInterval(() => {
-      if (containerRef.current) {
-        const { scrollLeft, scrollWidth } = containerRef.current;
-
-        containerRef.current.scrollLeft += scrollAmount;
-
-        //reset scroll position when reaching the end of the duplicated content
-        if (scrollLeft >= scrollWidth / 2) {
-          containerRef.current.scrollLeft = 0;
-        }
-      }
-    }, delay);
-  }, [scrollAmount, delay]);
-
-  const stopScroll = useCallback(() => {
-    if (scrollInterval.current) {
-      clearInterval(scrollInterval.current);
+  const projects = [
+    {
+      name: "Website Portfolio",
+      image: personalWeb,
+      url: 'https://github.com/glizzygobblrr/pdbaker'
+    },
+    {
+      name: "Ad distribution system",
+      image: gihubbies,
+      url: 'https://github.com/glizzygobblrr/fsdp'
+    },
+    {
+      name: "City Tycoon Game",
+      image: tycoon,
+      url: 'https://github.com/glizzygobblrr/SPM-console-game'
+    },
+    {
+      name: "Inflation Atlas",
+      image: inflationAtlas,
+      url: 'https://github.com/glizzygobblrr/FED_InflationApp'
+    },
+    {
+      name: "SEAwareness",
+      image: error,
+      url: null
+    },
+    {
+      name: "FallSafe",
+      image: fallSafe,
+      url: 'https://github.com/danielbakrr/FallSafe?tab=readme-ov-file'
     }
-  }, []);
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (container) {
-      startScroll();
-      container.addEventListener('mouseenter', stopScroll);
-      container.addEventListener('mouseleave', startScroll);
-
-      // Cleanup on unmount
-      return () => {
-        stopScroll();
-        container.removeEventListener('mouseenter', stopScroll);
-        container.removeEventListener('mouseleave', startScroll);
-      };
-    }
-  }, [startScroll, stopScroll]);
+  ];
 
   const openLink = (url) => {
-    window.open(url, '_blank');
+    if (url) {
+      window.open(url, '_blank');
+    }
   };
 
   return (
-    <section id="projects" className="projects-list">
-      <h2>Projects</h2>
-      <div className="scroll-container">
-        <div id="projectContainer" className="project-container" ref={containerRef}>
-          {/* Duplicate the content for infinite scroll */}
-          <div className="scroll-content">
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/pdbaker')}>
-              <img src={personalWeb} alt="Project 1" className="project-image" />
-              <div className="project-name">Website Portfolio</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/fsdp')}>
-              <img src={gihubbies} alt="Project 2" className="project-image" />
-              <div className="project-name">Ad distribution system</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/SPM-console-game')}>
-              <img src={tycoon} alt="Project 3" className="project-image" />
-              <div className="project-name">City Tycoon Game</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/FED_InflationApp')}>
-              <img src={inflationAtlas} alt="Project 4" className="project-image" />
-              <div className="project-name">Inflation Atlas</div>
-            </div>
-            <div className="project-item" onClick={() => openLink()}>
-              <img src={error} alt="Project 5" className="project-image" />
-              <div className="project-name">SEAwareness</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/danielbakrr/FallSafe?tab=readme-ov-file')}>
-              <img src={fallSafe} alt="Project 6" className="project-image" />
-              <div className="project-name">FallSafe</div>
-            </div>
-          </div>
-          <div className="scroll-content">
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/pdbaker')}>
-              <img src={personalWeb} alt="Project 1" className="project-image" />
-              <div className="project-name">Website Portfolio</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/fsdp')}>
-              <img src={gihubbies} alt="Project 2" className="project-image" />
-              <div className="project-name">Ad distribution system</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/SPM-console-game')}>
-              <img src={tycoon} alt="Project 3" className="project-image" />
-              <div className="project-name">City Tycoon Game</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/glizzygobblrr/FED_InflationApp')}>
-              <img src={inflationAtlas} alt="Project 4" className="project-image" />
-              <div className="project-name">Inflation Atlas</div>
-            </div>
-            <div className="project-item" onClick={() => openLink()}>
-              <img src={error} alt="Project 5" className="project-image" />
-              <div className="project-name">SEAwareness</div>
-            </div>
-            <div className="project-item" onClick={() => openLink('https://github.com/danielbakrr/FallSafe?tab=readme-ov-file')}>
-              <img src={fallSafe} alt="Project 6" className="project-image" />
-              <div className="project-name">FallSafe</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section id="projects" className="py-5 bg-light">
+      <Container>
+        <h2 className="text-center mb-5">Projects</h2>
+        <Row>
+          {projects.map((project, index) => (
+            <Col key={index} lg={4} md={6} className="mb-4">
+              <Card 
+                className="h-100 shadow-sm transition-all hover-scale" 
+                onClick={() => openLink(project.url)}
+                style={{ cursor: project.url ? 'pointer' : 'default' }}
+              >
+                <Card.Img 
+                  variant="top" 
+                  src={project.image} 
+                  alt={project.name}
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
+                <Card.Body className="text-center">
+                  <Card.Title>{project.name}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </section>
   );
 };

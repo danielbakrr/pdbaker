@@ -1,10 +1,12 @@
 import React from 'react';
-import '../styles/footer.css';
+import { Container } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2024 Putera Daniel Baker. All rights reserved.</p>
+    <footer className="bg-dark text-white py-4 mt-5">
+      <Container className="text-center">
+        <p className="mb-0">&copy; 2024 Putera Daniel Baker. All rights reserved.</p>
+      </Container>
     </footer>
   );
 };

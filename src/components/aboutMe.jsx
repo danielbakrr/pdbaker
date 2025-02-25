@@ -1,8 +1,8 @@
-import '../styles/aboutMe.css';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import meImg from '../assets/professional_photo_2.jpg';
 import meImg2 from '../assets/professional_photo.jpg';
 import guitar from '../assets/guitar.jpg';
-import { useState, useEffect, useMemo, useRef } from 'react';
 
 const AboutMe = () => {
   const sections = useMemo(() => [
@@ -37,7 +37,7 @@ const AboutMe = () => {
           setCurrentIndex(index);
         }
       });
-    }, { threshold: 1.0 });
+    }, { threshold: 0.7 });
 
     refsCopy.forEach((section) => observer.observe(section));
 
@@ -51,7 +51,7 @@ const AboutMe = () => {
       const textTimeoutId = setTimeout(() => {
         setCurrentText((prev) => prev + sections[currentIndex].content.charAt(textIndex));
         setTextIndex((prev) => prev + 1);
-      }, 10); // Adjust speed here
+      }, 10);
       return () => clearTimeout(textTimeoutId);
     } else if (currentIndex >= 0 && textIndex === sections[currentIndex].content.length) {
       setCompletedSections((prev) => new Set(prev).add(currentIndex));
@@ -66,20 +66,27 @@ const AboutMe = () => {
   }, [currentIndex, completedSections]);
 
   return (
-    <div className="about-me-container">
+    <Container id="about" className="py-5">
       {sections.map((section, index) => (
-        <div
-          className={`section-container ${index % 2 === 0 ? 'text-left' : 'text-right'}`}
+        <Row 
+          className={`mb-5 align-items-center ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}
           key={index}
           ref={(el) => (sectionRefs.current[index] = el)}
         >
-          <div className="image-container">
-            <img src={section.imgSrc} alt="Section" />
-          </div>
-          <div className="text-container">
-            <div className="about-me-section-content">
+          <Col md={6} className="mb-4 mb-md-0">
+            <Card className="border-0 shadow">
+              <Card.Img 
+                variant="top" 
+                src={section.imgSrc} 
+                alt={`About Daniel ${index + 1}`}
+                className="img-fluid"
+              />
+            </Card>
+          </Col>
+          <Col md={6}>
+            <div className="p-3">
               <p
-                className="typing-text"
+                className="lead"
                 dangerouslySetInnerHTML={{
                   __html: completedSections.has(index)
                     ? section.content
@@ -89,10 +96,10 @@ const AboutMe = () => {
                 }}
               />
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       ))}
-    </div>
+    </Container>
   );
 };
 
