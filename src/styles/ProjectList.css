@@ -1,8 +1,9 @@
 /* ProjectList.css */
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
 .projects-section {
   padding: 6rem 0;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 .section-title {
@@ -33,7 +34,6 @@
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -81,6 +81,7 @@
 .project-overlay-content {
   text-align: center;
   color: white;
+  font-family: 'Handjet', cursive;
 }
 
 .project-overlay-content i {
@@ -92,23 +93,30 @@
 .project-overlay-content p {
   margin: 0;
   font-weight: 500;
+  font-family: 'Handjet', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .project-body {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 20px;
+  font-family: 'Handjet', cursive;
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-family: 'Handjet', cursive;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: white !important; /* Added !important to ensure the color applies */
+  color: white !important;
+  letter-spacing: 1px;
 }
 
 /* Ensure Card.Title from Bootstrap doesn't override our styles */
 .card-title.project-title {
+  font-family: 'Handjet', cursive;
   color: white !important;
 }
 
@@ -116,6 +124,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  font-family: 'Handjet', cursive;
 }
 
 .tech-badge {
@@ -123,9 +132,11 @@
   color: #3498db;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid rgba(52, 152, 219, 0.5);
+  font-family: 'Handjet', cursive;
+  letter-spacing: 0.5px;
 }
 
 .tech-more {
@@ -138,19 +149,58 @@
   background-color: #1e1e1e;
   color: white;
   border-radius: 15px;
+  font-family: 'Handjet', cursive;
 }
 
 .project-modal .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.project-modal .modal-title {
+  font-family: 'Handjet', cursive;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.project-modal h5 {
+  font-family: 'Handjet', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.project-modal p {
+  font-family: 'Handjet', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
 .project-modal .modal-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-modal .modal-title {
+.project-modal .btn {
+  font-family: 'Handjet', cursive;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* GitHub button styling */
+.project-modal .btn-primary {
+  background-color: #3498db !important;
+  border-color: #3498db !important;
   color: white;
-  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.project-modal .btn-primary:hover {
+  background-color: #2980b9 !important;
+  border-color: #2980b9 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
 
 .tech-stack-modal {
@@ -158,6 +208,13 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
+}
+
+/* Apply Handjet font to section title as well for consistency */
+#projects h2.section-title {
+  font-family: 'Handjet', cursive;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
 
 @media (max-width: 991px) {

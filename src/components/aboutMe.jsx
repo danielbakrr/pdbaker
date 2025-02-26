@@ -13,19 +13,16 @@ const AboutMe = () => {
       title: "Who I Am",
       content: "Hello, I'm Daniel! I'm a year 2 Information Technology Student at Ngee Ann Polytechnic. I'm an aspiring data analyst and a Cloud enthusiast who enjoys all things technology!",
       imgSrc: meImg2,
-      icon: "fas fa-user-graduate",
     },
     {
       title: "What I Do",
       content: "As a strong advocate for continuous self-improvement, I'm keen on learning new things and venturing outside of my comfort zone. This application uses React.js - a framework I've taught myself!",
       imgSrc: meImg,
-      icon: "fas fa-laptop-code",
     },
     {
       title: "Beyond Tech",
       content: "Outside of my bustling academic life, I am an avid guitar geek and I enjoy the thrill of performing music live in front of an audience. Follow my band on <a href='https://www.instagram.com/sleep.analysis/' target='_blank' rel='noopener noreferrer' class='about-link'>Instagram</a>!",
       imgSrc: guitar,
-      icon: "fas fa-guitar",
     },
   ];
 

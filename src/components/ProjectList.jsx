@@ -170,7 +170,6 @@ const ProjectList = () => {
                   <h5>Description</h5>
                   <p>{selectedProject.description}</p>
                   
-                  <h5>Technologies</h5>
                   <div className="tech-stack-modal">
                     {selectedProject.technologies.map((tech, i) => (
                       <span key={i} className="tech-badge">{tech}</span>
