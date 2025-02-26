@@ -32,7 +32,7 @@ To do:
 
 8. **Additional Features**
    - 8.1 Interactive Elements✅
-   - 8.2 Responsiveness 
+   - 8.2 Responsiveness✅
    
 
 
