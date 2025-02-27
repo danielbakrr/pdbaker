@@ -107,22 +107,22 @@ const Header = () => {
           <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
             <li>
               <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>
-                <span className="nav-number">01.</span>About Me
+                About Me
               </a>
             </li>
             <li>
               <a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>
-                <span className="nav-number">02.</span>Projects
+                Projects
               </a>
             </li>
             <li>
               <a href="#certs" onClick={(e) => scrollToSection(e, 'certs')}>
-                <span className="nav-number">03.</span>Proficiencies
+                Proficiencies
               </a>
             </li>
             <li>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
-                <span className="nav-number">04.</span>Contact
+                Contact
               </a>
             </li>
           </ul>
