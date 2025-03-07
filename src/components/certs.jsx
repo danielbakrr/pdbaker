@@ -9,6 +9,9 @@ import node from '../assets/node.png';
 import express from '../assets/express.png';
 import react from '../assets/react.png';
 import github from '../assets/github.png';
+import SMSS from '../assets/ssms.png';
+import MySQL from '../assets/Mysql.png';
+import Azure from '../assets/Azure.png';
 import '../styles/certs.css';
 
 const CertsList = () => {
@@ -23,7 +26,7 @@ const CertsList = () => {
       name: "HTML", 
       image: html,
       description: "Semantic markup & accessibility",
-      level: 80
+      level: 85
     },
     { 
       name: "CSS", 
@@ -53,13 +56,31 @@ const CertsList = () => {
       name: "React", 
       image: react,
       description: "Frontend component library",
-      level: 80
+      level: 75
     },
     { 
       name: "GitHub", 
       image: github,
       description: "Version control & collaboration",
       level: 85
+    },
+    { 
+      name: "SQL Server Management Studio", 
+      image: SMSS,
+      description: "Database management & query execution",
+      level: 90
+    },
+    { 
+      name: "MySQL", 
+      image: MySQL,
+      description: "Relational database design & optimization",
+      level: 90
+    },
+    { 
+      name: "Microsoft Azure", 
+      image: Azure,
+      description: "Cloud computing & deployment services",
+      level: 70
     }
   ];
 

@@ -22,18 +22,6 @@ const Contact = () => {
                 />
               </a>
               
-              <a href="https://www.instagram.com/daniielbaker/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-decoration-none">
-                <img 
-                  src="https://img.icons8.com/m_outlined/512/FFFFFF/instagram-new.png" 
-                  alt='Instagram'
-                  className="img-fluid"
-                  style={{ maxWidth: '50px' }}
-                />
-              </a>
-              
               <a href="https://wa.me/98233055" 
                 target="_blank" 
                 rel="noopener noreferrer"
