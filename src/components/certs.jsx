@@ -62,19 +62,19 @@ const CertsList = () => {
       name: "GitHub", 
       image: github,
       description: "Version control & collaboration",
-      level: 85
+      level: 80
     },
     { 
       name: "SQL Server Management Studio", 
       image: SMSS,
       description: "Database management & query execution",
-      level: 90
+      level: 85
     },
     { 
       name: "MySQL", 
       image: MySQL,
       description: "Relational database design & optimization",
-      level: 90
+      level: 85
     },
     { 
       name: "Microsoft Azure", 
