@@ -12,9 +12,9 @@ import github from '../assets/github.png';
 import SMSS from '../assets/ssms.png';
 import MySQL from '../assets/Mysql.png';
 import Azure from '../assets/Azure.png';
-import '../styles/certs.css';
+import '../styles/skills.css';
 
-const CertsList = () => {
+const SkillsList = () => {
   const skills = [
     { 
       name: "AWS", 
@@ -106,7 +106,7 @@ const CertsList = () => {
   };
 
   return (
-    <section id="certs" className="skills-section py-5">
+    <section id="skills" className="skills-section py-5">
       <Container>
         <h2 className="section-title text-center mb-5">Technical Proficiencies</h2>
         
@@ -152,4 +152,4 @@ const CertsList = () => {
   );
 };
 
-export default CertsList;
+export default SkillsList;

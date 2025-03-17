@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from './components/header';
 import AboutMe from './components/aboutMe';
+import Timeline from './components/timeline';
 import ProjectList from './components/ProjectList';
 import ContactForm from './components/Contact';
 import Footer from './components/footer';
-import CertsList from './components/certs';
+import SkillsList from './components/skills';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -18,14 +19,19 @@ const App = () => {
             <AboutMe />
           </div>
         </section>
+        <section>
+          <div classname="container">
+            <Timeline/>
+          </div>
+        </section>
         <section id="projects" className="py-5">
           <div className="container">
             <ProjectList />
           </div>
         </section>
-        <section id="cert" className="py-5">
+        <section id="skill" className="py-5">
           <div className="container">
-            <CertsList />
+            <SkillsList />
           </div>
         </section>
         <section id="contact" className="py-5">

@@ -116,8 +116,8 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#certs" onClick={(e) => scrollToSection(e, 'certs')}>
-                Proficiencies
+              <a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>
+                Skills
               </a>
             </li>
             <li>
